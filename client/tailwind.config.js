@@ -1,0 +1,20 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
+module.exports = {
+  darkMode: "class",
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        customgreen: "#fff",
+        customlightgreen: "#98f5e1",
+      },
+      fontFamily: {
+        sans: ["Open Sans", ...defaultTheme.fontFamily.sans],
+      },
+    },
+  },
+};
