@@ -1,14 +1,28 @@
 import Head from "next/head";
-import Image from "next/image";
+import React, { useState, useEffect } from "react";
 import SideBar from "../components/sidebar/SideBar";
 import Dashboard from "../components/dashboard/Dashboard";
-// import TransactionIn from "../components/transaction/TransactionIn";
+import AddWalletForm from "../components/form/AddWalletForm";
+import AddWalletBtn from "../components/form/AddWalletBtn";
+import { Toaster } from "react-hot-toast";
 
 const style = {
-  container: `flex flex-row justify-between w-screen`,
+  container: `relative flex flex-row justify-end w-screen`,
 };
 
 export default function Home() {
+
+	// State for Add Wallet Modal
+	const [openModal, setOpenModal] = useState(false);
+	// State for Add Wallet Button
+	const [hideAddWalletBtn, setHideAddWalletBtn] = useState(false);
+
+
+	// Function to handle Modal control
+	const toggleModal = () => {
+		setOpenModal(!openModal);
+	};
+
   return (
     <div className={style.container}>
       <Head>
@@ -18,6 +32,12 @@ export default function Home() {
       </Head>
       <SideBar />
       <Dashboard />
+      <AddWalletForm openModal={openModal} toggleModal={toggleModal} />
+      <AddWalletBtn
+        toggleModal={toggleModal}
+        hideAddWalletBtn={hideAddWalletBtn}
+      />
+      <Toaster />
     </div>
   );
 }

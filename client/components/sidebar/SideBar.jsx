@@ -1,32 +1,34 @@
-import React from 'react'
-import WalletSvg from './icons'
-import Wallets from './Wallets'
+import React from "react";
+import WalletSvg from "./icons";
+import WalletItem from "./WalletItem";
+import { useSelector } from "react-redux";
 
 const style = {
-  container: `fixed top-0 left-0 font-sans w-[20vw] bg-[#0b090a] h-[100vh] pt-[40px] overflow-auto shadow-xl`,
-  wallet: `flex flex-row items-center text-white font-extrabold text-l px-2 pb-4 border-b-2 border-[#252b2c] rounded-xl`,
+  container: `fixed top-0 left-0 font-sans w-[20vw] bg-bgColor h-[100vh] pt-[40px] overflow-auto shadow-xl`,
+  wallet: `flex flex-row items-center text-white font-extrabold text-l px-2 pb-4 border-b-2`,
 };
 
 const SideBar = () => {
+  const wallets = useSelector((state) => state.wallets);
+
   return (
     <div className={style.container}>
-        <div className={style.wallet}>
-          <span>
-            <WalletSvg />
-          </span>
-          <h2 className='ml-2 text-center'>WALLETS</h2>
-        </div>
-          <Wallets />
-          <Wallets />
-          <Wallets />
-          <Wallets />
-          <Wallets />
-          <Wallets />
-          <Wallets />
-          <Wallets />
-          <Wallets />
+      <div className={style.wallet}>
+        <span>
+          <WalletSvg />
+        </span>
+        <h2 className='ml-2 text-center'>WALLETS</h2>
+      </div>
+      {wallets.map((wallet) => (
+            <WalletItem
+              key={wallet.id}
+              id={wallet.id}
+              walletKey={wallet.walletKey}
+              walletName={wallet.walletName}
+            />
+      ))}
     </div>
   );
-}
+};
 
-export default SideBar
+export default SideBar;
