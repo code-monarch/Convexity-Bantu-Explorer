@@ -6,7 +6,7 @@ import toast from "react-hot-toast";
 import { red } from "@mui/material/colors";
 
 const style = {
-  container: `fixed w-[100%] top-0 left-0 h-[100vh] right-[0px] bg-[rgba(0,0,0,0.8)] flex flex-col items-center justify-center p-auto z-100`,
+  container: `fixed w-[100%] top-0 left-0 h-[100vh] right-[0px] bg-[rgba(0,0,0,0.8)] flex flex-col items-center justify-center p-auto z-100 transition ease-in-out delay-150`,
 };
 
 const AddWalletForm = ({ openModal, toggleModal }) => {
