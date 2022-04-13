@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { addWallet } from "../../app/walletSlice";
 import CancelIcon from "@mui/icons-material/Cancel";
 import toast from "react-hot-toast";
+import { red } from "@mui/material/colors";
 
 const style = {
   container: `fixed w-[100%] top-0 left-0 h-[100vh] right-[0px] bg-[rgba(0,0,0,0.7)] flex flex-col items-center justify-center p-auto z-100`,
@@ -106,7 +107,7 @@ const AddWalletForm = ({ openModal, toggleModal }) => {
           </div>
         </form>
         <div onClick={toggleModal} className='cursor-pointer text-center'>
-          <CancelIcon color='action' sx={{ fontSize: 40 }} />
+          <CancelIcon color='action' sx={{ fontSize: 40, color: red[300] }} />
         </div>
       </div>
     </div>
