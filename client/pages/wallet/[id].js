@@ -16,7 +16,7 @@ const style = {
   main: `bg-white w-[100%] h-full overflow-auto flex flex-row justify-between rounded mt-[80px]`,
 };
 
-const wallet = () => {
+const Wallet = () => {
   const dispatch = useDispatch();
 
   const router = useRouter();
@@ -64,4 +64,4 @@ const wallet = () => {
   );
 };
 
-export default wallet;
+export default Wallet;
