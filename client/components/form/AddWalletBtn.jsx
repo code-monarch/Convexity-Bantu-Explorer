@@ -3,7 +3,7 @@ import Image from "next/image";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 
 const style = {
-  container: `fixed left-[70px] top-[85vh] w-auto h-[60px] cursor-pointer`,
+  container: `absolute bottom-[0px] left-[10vw] translate-x-[-50%] w-auto h-[60px] cursor-pointer z-50`,
 };
 
 const AddWalletBtn = ({ toggleModal }) => {
@@ -12,7 +12,7 @@ const AddWalletBtn = ({ toggleModal }) => {
       <div
         className={`${style.container} ${toggleModal ? "block" : "hidden"}`}
         onClick={toggleModal}>
-        <AddBoxIcon sx={{ fontSize: 50 }} />
+        <AddBoxIcon color='action' sx={{ fontSize: 50 }} />
       </div>
     </div>
   );

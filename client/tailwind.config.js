@@ -16,7 +16,7 @@ module.exports = {
         walletColor: "#002855",
       },
       fontFamily: {
-        sans: ["Open Sans", ...defaultTheme.fontFamily.sans],
+        sans: ["Quicksand", ...defaultTheme.fontFamily.sans],
       },
     },
   },

@@ -1,17 +1,16 @@
 import { configureStore } from "@reduxjs/toolkit";
 import walletReducer from "./walletSlice";
-import paymentsInReducer from "./paymentsInSlice";
-import paymentsOutReducer from "./paymentsOutSlice";
+import balanceReducer from "./balanceSlice";
 import { setupListeners } from "@reduxjs/toolkit/query";
 import { paymentsApi } from "../services/paymentsApi"
-// import transactionReducer from "./dashboardSlice";
+import { balanceApi } from "../services/balanceApi"
 
 export const store = configureStore({
   reducer: {
     wallets: walletReducer,
-    paymentsIn: paymentsInReducer,
-    paymentsOut: paymentsOutReducer,
+    balance: balanceReducer,
     [paymentsApi.reducerPath]: paymentsApi.reducer,
+    [balanceApi.reducerPath]: balanceApi.reducer,
 
     // transactions: transactionReducer,
   },

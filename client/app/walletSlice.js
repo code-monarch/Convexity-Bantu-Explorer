@@ -13,7 +13,7 @@ const walletSlice = createSlice({
       state.push(newWallet);
     },
     deleteWallet: (state, action) => {
-        return state.filter((todo) => todo.id !== action.payload.id);
+        return state.filter((wallet) => wallet.id !== action.payload.id);
     }
   },
 });
