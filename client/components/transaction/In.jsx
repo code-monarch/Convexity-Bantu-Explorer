@@ -19,7 +19,18 @@ const Header = ({ paymentIn }) => {
           <h2 className={headerstyle.headerH2}>TRANSFERS IN</h2>
         </div>
         <div className={headerstyle.headerH4}>
-          <h4 className="mr-[5px]">Total Transfers In: {paymentIn?.length}</h4> {<LoaderIcon />}
+          {paymentIn?.length ? (
+            <h4 className='mr-[5px]'>
+              Total Transfers OUT: <strong>{paymentIn?.length}</strong>
+            </h4>
+          ) : (
+            <>
+              <h4 className='mr-[5px]'>
+                Total Transfers In: <strong>{paymentIn?.length}</strong>
+              </h4>
+              <LoaderIcon />
+            </>
+          )}
         </div>
       </div>
       <div></div>
@@ -27,8 +38,7 @@ const Header = ({ paymentIn }) => {
   );
 };
 
-const In = ({paymentIn}) => {
-
+const In = ({ paymentIn }) => {
   return (
     <div className='bg-slate-300 w-[48%] ml-[1%] border-[#4a4a49] flex flex-col items-center text-white rounded'>
       <Header paymentIn={paymentIn} />

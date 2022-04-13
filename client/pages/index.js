@@ -3,24 +3,12 @@ import React, { useState, useEffect } from "react";
 import Header from "../components/dashboard/Header";
 import AddWalletBtn from "../components/form/AddWalletBtn";
 import AddWalletForm from "../components/form/AddWalletForm";
-// import { Toaster } from "react-hot-toast";
 
 const style = {
-  container: `relative h-[100vh] flex flex-col`,
+  container: `relative h-[100vh] w-[100vw] flex flex-col`,
 };
 
 export default function Home() {
-
-	// State for Add Wallet Modal
-	const [openModal, setOpenModal] = useState(false);
-	// State for Add Wallet Button
-	const [hideAddWalletBtn, setHideAddWalletBtn] = useState(false);
-
-
-	// Function to handle Modal control
-	const toggleModal = () => {
-		setOpenModal(!openModal);
-	};
 
   return (
     <div className={style.container}>
@@ -30,12 +18,6 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Header/>
-      <AddWalletForm openModal={openModal} toggleModal={toggleModal} />
-      {/* <Toaster /> */}
-      <AddWalletBtn
-        toggleModal={toggleModal}
-        hideAddWalletBtn={hideAddWalletBtn}
-      />
     </div>
   );
 }

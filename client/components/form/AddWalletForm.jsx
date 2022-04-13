@@ -5,17 +5,26 @@ import CancelIcon from "@mui/icons-material/Cancel";
 import toast from "react-hot-toast";
 
 const style = {
-  container: `fixed w-[80vw] h-[100vh] right-[0px] bg-[rgba(0,0,0,0.7)] flex flex-col items-center justify-center p-auto`,
+  container: `fixed w-[100%] top-0 left-0 h-[100vh] right-[0px] bg-[rgba(0,0,0,0.7)] flex flex-col items-center justify-center p-auto z-100`,
 };
 
 const AddWalletForm = ({ openModal, toggleModal }) => {
   const notify = () =>
-    toast.success("Wallet added Successfully", {
+    toast("Wallet added Successfully", {
       position: "top-center",
       icon: "👏",
       style: {
         borderRadius: "10px",
-        background: "#333",
+        background: "#002855",
+        color: "#fff",
+      },
+    });
+  const error = () =>
+    toast("Input field cannot be empty!", {
+      position: "top-center",
+      style: {
+        borderRadius: "10px",
+        background: "#ee2855",
         color: "#fff",
       },
     });
@@ -38,13 +47,17 @@ const AddWalletForm = ({ openModal, toggleModal }) => {
           walletName: customName,
         })
       );
+      // NOTIFY WITH TOAST
+      notify();
+      // CLEAR INPUT FIELD
+      setWalletKey("");
+      setCustomName("");
+      toggleModal();
     }
-    // CLEAR INPUT FIELD
-    setWalletKey("");
-    setCustomName("");
-    toggleModal();
-    // NOTIFY WITH TOAST
-    notify();
+    if(!walletKey && customName || walletKey && !customName || !walletKey && !customName) {
+    // ERROR WITH TOAST
+    error();
+    }
   };
 
   return (

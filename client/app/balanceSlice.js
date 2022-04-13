@@ -2,10 +2,10 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const balanceSlice = createSlice({
   name: "balance",
-  initialState: [],
+  initialState: null,
   reducers: {
     getWalletBalance: (state, action) => {
-      return (state = action.payload.balance);
+      return state = action.payload.balance;
     },
   },
 });
