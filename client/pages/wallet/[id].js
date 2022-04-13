@@ -13,7 +13,7 @@ import { useDispatch } from "react-redux";
 
 const style = {
   container: `w-[80vw] bg-[#fff] ml-[20vw]`,
-  main: `bg-white w-[100%] h-full overflow-auto flex flex-row justify-between rounded mt-[80px]`,
+  main: `bg-white w-[100%] h-full overflow-auto flex flex-row justify-around rounded mt-[80px]`,
 };
 
 const Wallet = () => {

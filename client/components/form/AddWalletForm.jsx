@@ -12,7 +12,7 @@ const style = {
 const AddWalletForm = ({ openModal, toggleModal }) => {
   const notify = () =>
     toast("Wallet added Successfully", {
-      position: "top-center",
+      position: "bottom-center",
       icon: "👏",
       style: {
         borderRadius: "10px",
@@ -21,7 +21,7 @@ const AddWalletForm = ({ openModal, toggleModal }) => {
       },
     });
   const error = () =>
-    toast("Input field cannot be empty!", {
+    toast("Input fields cannot be empty!", {
       position: "top-center",
       style: {
         borderRadius: "10px",

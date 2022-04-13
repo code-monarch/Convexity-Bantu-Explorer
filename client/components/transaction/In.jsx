@@ -4,9 +4,9 @@ import millify from "millify";
 import { LoaderIcon } from "react-hot-toast";
 
 const headerstyle = {
-  headerwrapper: `flex flex-col items-center text-black p-2`,
+  headerwrapper: `bg-black w-[100%] rounded-t  flex flex-col items-center text-white p-2`,
   headtextFlex: `flex flex-row items-center mb-1 `,
-  headerH2: `text-black font-bold text-l`,
+  headerH2: `text-white font-bold text-l`,
   headerH4: `flex flex-row items-center font-base text-sm`,
 };
 
@@ -40,29 +40,29 @@ const Header = ({ paymentIn }) => {
 
 const In = ({ paymentIn }) => {
   return (
-    <div className='bg-slate-300 w-[48%] ml-[1%] border-[#4a4a49] flex flex-col items-center text-white rounded'>
+    <div className='border-2 border-black w-[48%] flex flex-col items-center text-black rounded'>
       <Header paymentIn={paymentIn} />
       <div className='w-full'>
         {paymentIn?.map((ins, i) => {
           return (
             <div
               key={i}
-              className='text-sm bg-walletColor rounded-sm p-1 my-2 mx-2 border border-gray-200'>
+              className='text-sm bg-[#b9fbc0] rounded-sm p-1 my-2 mx-2'>
               {/* ONE */}
               <div className='flex flex-row items-center'>
                 <span className='mr-3 font-bold'>Hash:</span>
-                <span className='truncate font-normal text-xs'>
+                <span className='truncate font-medium text-xs'>
                   {ins?.transaction_hash}
                 </span>
               </div>
               {/* TWO */}
               <div className='flex flex-row items-center'>
                 <span className='mr-3 font-bold'>Receiver:</span>
-                <span className='truncate font-normal text-xs'>{ins?.to}</span>
+                <span className='truncate font-medium text-xs'>{ins?.to}</span>
               </div>
               <div className='flex flex-row items-center'>
                 <span className='mr-3 font-bold'>Amount:</span>
-                <span className='truncate font-normal text-xs'>
+                <span className='truncate font-medium text-xs'>
                   {millify(ins?.amount, {
                     precision: 3,
                     lowercase: true,
@@ -72,7 +72,7 @@ const In = ({ paymentIn }) => {
               {/* FIVE */}
               <div className='flex flex-row items-center'>
                 <span className='mr-3 font-bold'>Time:</span>
-                <span className='truncate font-normal text-xs'>
+                <span className='truncate font-medium text-xs'>
                   {ins?.created_at}
                 </span>
               </div>

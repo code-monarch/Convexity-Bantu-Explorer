@@ -1,8 +1,7 @@
 import Head from "next/head";
 import React, { useState, useEffect } from "react";
+import ExchangeCard from "../components/dashboard/ExchangeCard";
 import Header from "../components/dashboard/Header";
-import AddWalletBtn from "../components/form/AddWalletBtn";
-import AddWalletForm from "../components/form/AddWalletForm";
 
 const style = {
   container: `relative h-[100vh] w-[100vw] flex flex-col`,
@@ -18,6 +17,7 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Header/>
+      <ExchangeCard />
     </div>
   );
 }

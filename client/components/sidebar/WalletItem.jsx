@@ -12,14 +12,14 @@ import toast from "react-hot-toast";
 import millify from "millify";
 
 const style = {
-  walletContainer: `cursor-pointer font-bold font-sans h-[60px] w-[90%] bg-walletColor focus:bg-white focus:text-black text-[#fff] cursor-pointer rounded-sm p-3 hover:shadow-md mx-auto mt-[10px] cursor-pointer`,
+  walletContainer: `cursor-pointer font-bold font-sans h-[60px] w-[90%] bg-walletColor focus:bg-white focus:text-black text-[#fff] cursor-pointer rounded-sm p-3 hover:shadow-md mx-auto mt-[10px] cursor-pointer hover:-translate-y-1 hover:scale-105 transition ease-in-out delay-150`,
   walletname: `font-bold cursor-pointer text-[#fff] uppercase`,
 };
 
 const WalletItem = ({ id, walletKey, walletName }) => {
   const notify = () =>
     toast("Wallet Removed", {
-      position: "top-center",
+      position: "bottom-center",
       style: {
         borderRadius: "10px",
         background: "#ee2855",
@@ -38,36 +38,36 @@ const WalletItem = ({ id, walletKey, walletName }) => {
         id: id,
       })
     );
-    notify()
+    notify();
   };
 
   return (
     <div id={id} className={style.walletContainer}>
-      <div className='flex flex-col justify-between cursor-pointer'>
-        <Link href={`/wallet/${walletKey}`}>
-          <a className='cursor-pointer'>
-            <div className='flex flex-row justify-between items-top'>
+      <div className='flex flex-col justify-between cursor-pointer ring-pink-500 focus:ring-2'>
+        <div className='flex flex-row justify-between items-top'>
+          <Link href={`/wallet/${walletKey}`}>
+            <a className='cursor-pointer'>
               <h3 className={style.walletname}>{walletName}</h3>
-              <div onClick={handleDeleteClick}>
-                <CancelIcon sx={{ color: red[300] }} />
-              </div>
-            </div>
-            <div className='flex flex-row justify-between items-center text-sm font-light'>
-              {nativeBalance ? (
-                <h4 className='mr-[5px]'>
-                  Balance: {nativeBalance && nativeBalance}
-                </h4>
-              ) : (
-                <>
-                  <h4 className='mr-[5px]'>
-                    Balance: {nativeBalance && nativeBalance}
-                  </h4>{" "}
-                  <LoaderIcon />
-                </>
-              )}
-            </div>
-          </a>
-        </Link>
+            </a>
+          </Link>
+          <div onClick={handleDeleteClick}>
+            <CancelIcon sx={{ color: red[300] }} />
+          </div>
+        </div>
+        <div className='flex flex-row items-center text-sm font-light'>
+          {nativeBalance ? (
+            <h4 className='mr-[5px]'>
+              Balance: {nativeBalance && nativeBalance}
+            </h4>
+          ) : (
+            <>
+              <h4 className='mr-[5px]'>
+                Balance: {nativeBalance && nativeBalance}
+              </h4>{" "}
+              <LoaderIcon />
+            </>
+          )}
+        </div>
       </div>
     </div>
   );
