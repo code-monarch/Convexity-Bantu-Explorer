@@ -4,8 +4,8 @@ import millify from "millify";
 import { LoaderIcon } from "react-hot-toast";
 
 const headerstyle = {
-  headerwrapper: `bg-black w-[100%] rounded-t  flex flex-col items-center text-white p-2`,
-  headtextFlex: `flex flex-row items-center mb-1 `,
+  headerwrapper: `w-[100%] rounded-t  flex flex-col items-center text-white p-2 border-b-2 border-white mb-3`,
+  headtextFlex: `flex flex-row items-center mb-1`,
   headerH2: `text-white font-bold text-l`,
   headerH4: `flex flex-row items-center font-base text-sm`,
 };
@@ -40,14 +40,14 @@ const Header = ({ paymentIn }) => {
 
 const In = ({ paymentIn }) => {
   return (
-    <div className='border-2 border-black w-[48%] flex flex-col items-center text-black rounded'>
+    <div className='w-[48%] flex flex-col items-center text-[#252422] rounded bg-walletColor'>
       <Header paymentIn={paymentIn} />
       <div className='w-full'>
         {paymentIn?.map((ins, i) => {
           return (
             <div
               key={i}
-              className='text-sm bg-[#b9fbc0] rounded-sm p-1 my-2 mx-2'>
+              className='text-sm bg-[#ffffff] rounded-sm p-1 my-2 mx-2'>
               {/* ONE */}
               <div className='flex flex-row items-center'>
                 <span className='mr-3 font-bold'>Hash:</span>
@@ -63,10 +63,7 @@ const In = ({ paymentIn }) => {
               <div className='flex flex-row items-center'>
                 <span className='mr-3 font-bold'>Amount:</span>
                 <span className='truncate font-medium text-xs'>
-                  {millify(ins?.amount, {
-                    precision: 3,
-                    lowercase: true,
-                  })}
+                  {ins?.amount}
                 </span>
               </div>
               {/* FIVE */}

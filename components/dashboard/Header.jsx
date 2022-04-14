@@ -3,7 +3,7 @@ import Image from "next/image"
 
 
 const headerStyle = {
-  container: `fixed top-0 left-[21vw] w-[78vw] h-[60px] flex flex-row justify-between items-center px-[20px] mx[auto] border-b-[1px] border-white border-solid bg-clip-padding bg-opacity-60`,
+  container: `z-50 fixed top-0 left-[21vw] w-[78vw] h-[60px] flex flex-row justify-between items-center px-[20px] mx[auto] border-b-[1px] border-white border-solid bg-clip-padding bg-opacity-60`,
   iconsFlex: `w-[70px] flex justify-between`,
   icons: `cursor-pointer`,
 };

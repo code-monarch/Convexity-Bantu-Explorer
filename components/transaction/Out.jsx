@@ -4,7 +4,7 @@ import millify from "millify";
 import { LoaderIcon } from "react-hot-toast";
 
 const headerstyle = {
-  headerwrapper: `bg-black w-[100%] rounded-t flex flex-col items-center text-white p-2`,
+  headerwrapper: `w-[100%] rounded-t flex flex-col items-center text-white p-2  border-b-2 border-white mb-3`,
   headtextFlex: `flex flex-row items-center mb-1 `,
   headerH2: `text-white font-bold text-l`,
   headerH4: `flex flex-row items-center font-base text-sm`,
@@ -44,14 +44,14 @@ const Out = ({ paymentOut}) => {
   console.log(transactOut, "transactOut func");
 
   return (
-    <div className='border-2 border-black w-[48%] flex flex-col items-center text-black rounded '>
+    <div className='w-[48%] flex flex-col items-center text-black rounded bg-walletColor'>
       <Header paymentOut={paymentOut} />
       <div className='w-full'>
         {paymentOut?.map((outs, i) => {
           return (
             <div
               key={i}
-              className='text-sm bg-[#ff758f] rounded-sm p-1 my-2 mx-2'>
+              className='text-sm bg-[#ffffff] rounded-sm p-1 my-2 mx-2'>
               {/* ONE */}
               <div className='flex flex-row items-center'>
                 <span className='mr-3 font-bold'>Hash:</span>
@@ -67,10 +67,7 @@ const Out = ({ paymentOut}) => {
               <div className='flex flex-row items-center'>
                 <span className='mr-3 font-bold'>Amount:</span>
                 <span className='truncate font-medium text-xs'>
-                  {millify(outs?.amount, {
-                    precision: 3,
-                    lowercase: true,
-                  })}
+                  {outs?.amount}
                 </span>
               </div>
               {/* FIVE */}
