@@ -8,15 +8,16 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Quicksand", ...defaultTheme.fontFamily.sans],
+        serif: ["Merriweather", "serif"],
+      },
       colors: {
         customgreen: "#fff",
         customlightgreen: "#98f5e1",
         customBlack: "#0b090a",
         bgColor: "#023E7D",
         walletColor: "#002855",
-      },
-      fontFamily: {
-        sans: ["Quicksand", ...defaultTheme.fontFamily.sans],
       },
     },
   },
