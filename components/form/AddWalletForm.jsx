@@ -80,7 +80,7 @@ const AddWalletForm = ({ openModal, toggleModal }) => {
               placeholder='GAVHFGTQMCB3Q4RIYJAPT2FRC2A5JN6P4HLOXS3TH5B26NGONM2SVZJD'
               onChange={(e) => setWalletKey(e.target.value)}
               value={walletKey}
-              autoFocus={true}
+              autoFocus
             />
           </div>
           <div className='mb-4'>

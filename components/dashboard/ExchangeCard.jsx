@@ -11,7 +11,7 @@ const style = {
 
 const ExchangeCard = () => {
   return (
-    <div className='ml-[20vw] mt-[80px] flex flex-col items-center'>
+    <div className='ml-[20vw] mt-[100px] flex flex-col items-center z-[-10]'>
       <div className={style.wrapper}>
         <div className={`${style.container} bg-[#f9690c]`}>
           <Link href='#'>
