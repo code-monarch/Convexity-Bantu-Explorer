@@ -3,7 +3,7 @@ import Image from "next/image";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 
 const style = {
-  container: `absolute bottom-[0px] left-[10vw] translate-x-[-50%] w-auto h-[60px] cursor-pointer z-50`,
+  container: `absolute bottom-[10px] left-[10vw] translate-x-[-50%] w-auto h-[60px] cursor-pointer z-50`,
 };
 
 const AddWalletBtn = ({ toggleModal }) => {

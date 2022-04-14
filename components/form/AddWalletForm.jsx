@@ -12,7 +12,7 @@ const style = {
 const AddWalletForm = ({ openModal, toggleModal }) => {
   const notify = () =>
     toast("Wallet added Successfully", {
-      position: "bottom-center",
+      position: "top-center",
       icon: "👏",
       style: {
         borderRadius: "10px",
