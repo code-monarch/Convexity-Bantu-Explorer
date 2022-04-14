@@ -70,7 +70,7 @@ const ExchangeCard = () => {
                   height={50}
                   priority
                   src='/ethereumLogo.png'
-                  alt='Bantu Logo'
+                  alt='Ethereum Logo'
                 />
               </div>
             </a>
@@ -130,7 +130,7 @@ const ExchangeCard = () => {
                   height={50}
                   priority
                   src='/binance.png'
-                  alt='Bantu Logo'
+                  alt='Binance Logo'
                 />
               </div>
             </a>

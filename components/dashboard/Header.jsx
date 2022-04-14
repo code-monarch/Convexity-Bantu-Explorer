@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <div className={headerStyle.container} style={{backdropFilter: "blur(3px)"}}>
       <div className="flex flex-row items-center">
-        <Image src='/convexity-logo.png' width={200} height={50} priority/>
+        <Image src='/convexity-logo.png' width={200} height={50} alt="Convexity Logo" priority/>
         <h1 className='font-black text-sm text-center'>TRADE EXPLORER</h1>
       </div>
       <div className={headerStyle.iconsFlex}>
