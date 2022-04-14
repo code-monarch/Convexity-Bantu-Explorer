@@ -36,8 +36,6 @@ const AddWalletForm = ({ openModal, toggleModal }) => {
   const [walletKey, setWalletKey] = useState("");
   const [customName, setCustomName] = useState("");
 
-  console.log(walletKey);
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if (walletKey && customName) {

@@ -23,9 +23,6 @@ const Wallet = () => {
   const { id } = router.query;
   const { data, isFetching } = useGetPaymentsQuery(id);
   const payments = data?._embedded?.records;
-  console.log(payments, "payments");
-  console.log(data, "data");
-  console.log({ id }, "slug");
 
   // GET WALLET BALANCE
   const { data: balance} = useGetBalanceQuery(id);
@@ -39,8 +36,6 @@ const Wallet = () => {
   const paymentIn = payments?.filter(
     (payment) => payment.from !== id && payment.type == "payment"
   );
-  // transactIn.concat(newTransactIn)
-  console.log(paymentIn, "new transact in");
 
   // PAYMENT OUT
   const paymentOut = payments?.filter(
@@ -49,7 +44,6 @@ const Wallet = () => {
       payment.asset_type == "native" ||
       payment.asset_type == "create_account"
   );
-  console.log(paymentOut, "new transact out");
 
   if (isFetching) return <Loader />;
 

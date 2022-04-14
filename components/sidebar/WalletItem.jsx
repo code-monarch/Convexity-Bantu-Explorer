@@ -28,7 +28,6 @@ const WalletItem = ({ id, walletKey, walletName }) => {
     });
 
   const nativeBalance = useSelector((state) => state.balance);
-  console.log(nativeBalance, "native balance");
 
   const dispatch = useDispatch();
 
