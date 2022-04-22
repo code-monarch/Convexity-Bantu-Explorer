@@ -1,9 +1,9 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import SideBar from "./sidebar/SideBar";
-import { Toaster } from "react-hot-toast";
-import AddWalletForm from "./form/AddWalletForm";
+import Dashboard from "./dashboard";
+import AddWalletForm from "../../form/AddWalletForm";
 
-export default function Layout({ children }) {
+export default function Layout() {
   // State for Add Wallet Modal
   const [openModal, setOpenModal] = useState(false);
   // State for Add Wallet Button
@@ -15,14 +15,11 @@ export default function Layout({ children }) {
   };
   return (
     <div className='relative w-[100vw] h-[100vh]'>
-      <div className='flex'>
-        <SideBar
-          toggleModal={toggleModal}
-        />
-        {children}
+      <div className='flex justify-between w-[100%]'>
+        <SideBar toggleModal={toggleModal} />
+        <Dashboard />
       </div>
       <AddWalletForm openModal={openModal} toggleModal={toggleModal} />
-      <Toaster />
     </div>
   );
 }

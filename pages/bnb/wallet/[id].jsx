@@ -1,14 +1,13 @@
-import Header from "../../components/dashboard/Header";
-import In from "../../components/transaction/In";
-import Out from "../../components/transaction/Out";
-import Loader from "../../components/utils/Loader";
+import Header from "../../../components/dashboard/Header";
+import In from "../../../components/transaction/In";
+import Out from "../../../components/transaction/Out";
 
-import { getWalletBalance } from "../../app/balanceSlice";
+import { getWalletBalance } from "../../../app/balanceSlice";
 
 import { useRouter } from "next/router";
 
-import { useGetPaymentsQuery } from "../../services/paymentsApi";
-import { useGetBalanceQuery } from "../../services/balanceApi";
+import { useGetPaymentsQuery } from "../../../services/paymentsApi";
+import { useGetBalanceQuery } from "../../../services/balanceApi";
 import { useDispatch } from "react-redux";
 
 const style = {
@@ -19,16 +18,25 @@ const style = {
 const Wallet = () => {
   const dispatch = useDispatch();
 
+  // INSTANTIATE NEXT JS useRouter
   const router = useRouter();
+
+  // STORE ROUTE QUERY WHICH IS THE WALLET KEY IN A VARIABLE
   const { id } = router.query;
+  console.log(router.query);
+
   const { data, isFetching } = useGetPaymentsQuery(id);
   const payments = data?._embedded?.records;
 
-  // GET WALLET BALANCE
-  const { data: balance} = useGetBalanceQuery(id);
+  // GET WALLET BALANCE FROM balanceApi, PASS WALLET KEY TO THE useGetBalanceQuery RTK hook. THE balanceApi FETCHES THE WALLET BALANCE FROM BANTU API. THE RETURNED DATA IS DESTRUCTURED FROM THE useGetBalanceQuery hook
+  // DATA FETCHED IS USED AS THE ALIAS BALANCE TO PREVENT REDEFINED ERROR
+  const { data: balance } = useGetBalanceQuery(id);
+  console.log(balance);
+  // DISPATCH getWalletBalance Action WITH THE FETCHED BALANCE TO BE STORED IN THE BALANCE STATE
   dispatch(
     getWalletBalance({
       balance: balance?.balances[1]?.balance,
+      id: id,
     })
   );
 
@@ -44,8 +52,6 @@ const Wallet = () => {
       payment.asset_type == "native" ||
       payment.asset_type == "create_account"
   );
-
-  if (isFetching) return <Loader />;
 
   return (
     <div className={style.container}>

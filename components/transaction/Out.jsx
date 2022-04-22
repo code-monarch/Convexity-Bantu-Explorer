@@ -4,9 +4,9 @@ import millify from "millify";
 import { LoaderIcon } from "react-hot-toast";
 
 const headerstyle = {
-  headerwrapper: `w-[100%] rounded-t flex flex-col items-center text-white p-2  border-b-2 border-white mb-3`,
+  headerwrapper: `w-[100%] rounded-t flex flex-col items-center text-black p-2  border-b-2 border-black mb-3`,
   headtextFlex: `flex flex-row items-center mb-1 `,
-  headerH2: `text-white font-bold text-l`,
+  headerH2: `text-black font-bold text-l`,
   headerH4: `flex flex-row items-center font-base text-sm`,
 };
 
@@ -41,17 +41,16 @@ const Out = ({ paymentOut}) => {
   // let [transactIn, setTransactIn] = useState()
 
   const transactOut = useSelector((state) => state?.paymentsOut);
-  console.log(transactOut, "transactOut func");
 
   return (
-    <div className='w-[48%] flex flex-col items-center text-black rounded bg-walletColor'>
+    <div className='w-[48%] flex flex-col items-center text-black rounded bg-[#ecf0f1]'>
       <Header paymentOut={paymentOut} />
       <div className='w-full'>
         {paymentOut?.map((outs, i) => {
           return (
             <div
               key={i}
-              className='text-sm bg-[#ffffff] rounded-sm p-1 my-2 mx-2'>
+              className='text-sm bg-[#f6e5e4] rounded-sm p-1 my-2 mx-2'>
               {/* ONE */}
               <div className='flex flex-row items-center'>
                 <span className='mr-3 font-bold'>Hash:</span>

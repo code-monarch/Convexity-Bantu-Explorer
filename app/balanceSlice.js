@@ -5,7 +5,7 @@ const balanceSlice = createSlice({
   initialState: null,
   reducers: {
     getWalletBalance: (state, action) => {
-      return state = action.payload.balance;
+      return state = action.payload;
     },
   },
 });

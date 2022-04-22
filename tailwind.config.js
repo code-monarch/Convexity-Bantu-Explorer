@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Quicksand", ...defaultTheme.fontFamily.sans],
+        sans: ["Heebo", ...defaultTheme.fontFamily.sans],
         serif: ["Merriweather", "serif"],
       },
       colors: {

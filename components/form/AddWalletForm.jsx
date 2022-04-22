@@ -1,15 +1,19 @@
 import { useState } from "react";
+
 import { useDispatch } from "react-redux";
 import { addWallet } from "../../app/walletSlice";
+
 import CancelIcon from "@mui/icons-material/Cancel";
-import toast from "react-hot-toast";
 import { red } from "@mui/material/colors";
+
+import toast from "react-hot-toast";
 
 const style = {
   container: `fixed w-[100%] top-0 left-0 h-[100vh] right-[0px] bg-[rgba(0,0,0,0.8)] flex flex-col items-center justify-center p-auto z-100 transition ease-in-out delay-150`,
 };
 
 const AddWalletForm = ({ openModal, toggleModal }) => {
+  // NOTIFICATION WHEN A NEW ACCOUNT IS ADDED(USING REACT HOT TOAST PACKAGE)
   const notify = () =>
     toast("Wallet added Successfully", {
       position: "top-center",
@@ -20,6 +24,8 @@ const AddWalletForm = ({ openModal, toggleModal }) => {
         color: "#fff",
       },
     });
+
+  //  ERROR MESAGE WHE FORM INPUT FIELD IS EMPTY
   const error = () =>
     toast("Input fields cannot be empty!", {
       position: "top-center",
@@ -29,6 +35,18 @@ const AddWalletForm = ({ openModal, toggleModal }) => {
         color: "#fff",
       },
     });
+
+
+  // REGEX PATTERN TO VALIDATES INPUTED WALLET KEY 
+    const walletkeyPattern = /^\d[G]{56}$/i
+
+    // FUNCTION THAT COMPARES INPUTED WALLET KEY TO WALLET KEY REGEX PATTERN
+    const validateWalletkey = (inputedWalletKey) => {
+      if(inputedWalletKey !== walletkeyPattern) {
+        console.log("walletkeey inputed is not correct")
+      }
+    }
+
 
   // USEDISPATCH
   const dispatch = useDispatch();
@@ -77,6 +95,8 @@ const AddWalletForm = ({ openModal, toggleModal }) => {
               name='walletKey'
               placeholder='GAVHFGTQMCB3Q4RIYJAPT2FRC2A5JN6P4HLOXS3TH5B26NGONM2SVZJD'
               onChange={(e) => setWalletKey(e.target.value)}
+              // VALIDATE THE WALLETKEY TYPED AFTER TYPING
+              onKeyUp={(e) => validateWalletkey(e.target.value)}
               value={walletKey}
               autoFocus
             />

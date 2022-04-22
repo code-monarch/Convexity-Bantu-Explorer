@@ -3,7 +3,7 @@ import Image from "next/image"
 
 
 const headerStyle = {
-  container: `fixed top-0 left-[20vw] w-[78vw] h-[60px] flex flex-row justify-between items-center px-[20px] mx[auto] border-b-[1px] border-white border-solid bg-clip-padding bg-opacity-60`,
+  container: `fixed top-0 w-[80%] h-[60px] flex flex-row justify-between items-center px-[20px] border-b-[1px] border-white border-solid bg-clip-padding bg-opacity-60`,
   iconsFlex: `w-[70px] flex justify-between`,
   icons: `cursor-pointer`,
 };
@@ -12,7 +12,7 @@ const Header = () => {
     <div className={headerStyle.container} style={{backdropFilter: "blur(3px)"}}>
       <div className="flex flex-row items-center">
         <Image src='/convexity-logo.png' width={200} height={50} alt="Convexity Logo" priority/>
-        <h1 className='font-black text-sm text-center'>TRADE EXPLORER</h1>
+        <h1 className='font-normal text-sm text-center'>TRADE EXPLORER</h1>
       </div>
       <div className={headerStyle.iconsFlex}>
         <span className={headerStyle.icons}>

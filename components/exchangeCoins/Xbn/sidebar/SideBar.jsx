@@ -1,11 +1,11 @@
 import React from "react";
 import WalletSvg from "./icons";
-import WalletItem from "./WalletItem"
+import WalletItem from "./WalletItem";
 import { useSelector } from "react-redux";
-import AddWalletBtn from "../form/AddWalletBtn";
+import AddWalletBtn from "../../../form/AddWalletBtn";
 
 const style = {
-  container: `relative z-50 fixed left-0 top-0 font-sans w-[20vw] bg-bgColor h-[100vh] pt-[40px] overflow-auto shadow-md`,
+  container: `relative z-50 fixed left-0 top-0 font-sans w-[20vw] bg-[#f9690c] h-[100vh] pt-[40px] overflow-auto shadow-md`,
   wallet: `flex flex-row items-center text-white font-extrabold text-l px-2 pb-4 border-b-2`,
 };
 
