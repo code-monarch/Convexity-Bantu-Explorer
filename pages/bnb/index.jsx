@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div className={style.container}>
       <Head>
-        <title>Ethereum </title>
+        <title>BNB </title>
         <meta name='description' content='XBN Explorer' />
         <link rel='icon' href='/favicon.ico' />
       </Head>

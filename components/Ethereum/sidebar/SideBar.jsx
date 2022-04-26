@@ -1,8 +1,8 @@
 import React from "react";
 import WalletSvg from "./icons";
-import WalletItem from "./WalletItem";
+import WalletItem from "./walletItem";
 import { useSelector } from "react-redux";
-import AddWalletBtn from "../form/AddWalletBtn";
+import AddWalletBtn from "../form/addWalletBtn";
 
 const style = {
   container: `relative z-50 fixed left-0 top-0 font-sans w-[20vw] bg-[#000000] h-[100vh] pt-[40px] overflow-auto shadow-md`,
