@@ -1,14 +1,14 @@
 import Header from "../../../components/dashboard/Header";
-import TransactionsPageLayout from "../../../components/usdt/TransactionsPageLayout";
-import In from "../../../components/xbn/transaction/In";
-import Out from "../../../components/xbn/transaction/Out";
+import TransactionsPageLayout from "../../../components/USDT/TransactionsPageLayout";
+import In from "../../../components/USDT/transaction/In";
+import Out from "../../../components/USDT/transaction/Out";
 
-import { getWalletBalance } from "../../../app/usdt/balanceSlice";
+import { getWalletBalance } from "../../../app/USDT/balanceSlice";
 
 import { useRouter } from "next/router";
 
-import { useGetPaymentsQuery } from "../../../services/usdt/usdtpaymentsApi";
-import { useGetBalanceQuery } from "../../../services/usdt/usdtbalanceApi";
+import { useGetPaymentsQuery } from "../../../services/USDT/usdtpaymentsApi";
+import { useGetBalanceQuery } from "../../../services/USDT/usdtbalanceApi";
 import { useDispatch } from "react-redux";
 
 const style = {
