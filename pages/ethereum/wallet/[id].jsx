@@ -1,7 +1,7 @@
 import Header from "../../../components/dashboard/Header";
 import TransactionsPageLayout from "../../../components/Ethereum/TransactionsPageLayout";
-import In from "../../../components/xbn/transaction/In";
-import Out from "../../../components/xbn/transaction/Out";
+import In from "../../../components/Ethereum/transaction/In";
+import Out from "../../../components/Ethereum/transaction/Out";
 
 import { getWalletBalance } from "../../../app/ethereum/ethbalanceSlice";
 
