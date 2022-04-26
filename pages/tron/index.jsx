@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Layout from "../../components/usdt/index";
+import Layout from "../../components/USDT/index";
 
 export default function Home() {
   return (

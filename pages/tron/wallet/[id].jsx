@@ -3,7 +3,7 @@ import TransactionsPageLayout from "../../../components/USDT/TransactionsPageLay
 import In from "../../../components/USDT/transaction/In";
 import Out from "../../../components/USDT/transaction/Out";
 
-import { getWalletBalance } from "../../../app/usdt/balanceSlice";
+import { getWalletBalance } from "../../../app/usdt/usdtbalanceSlice";
 
 import { useRouter } from "next/router";
 

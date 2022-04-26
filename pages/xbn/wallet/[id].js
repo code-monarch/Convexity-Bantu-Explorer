@@ -1,9 +1,9 @@
 import Header from "../../../components/dashboard/Header";
 import TransactionsPageLayout from "../../../components/Xbn/TransactionsPageLayout";
-import In from "../../../components/xbn/transaction/In";
-import Out from "../../../components/xbn/transaction/Out";
+import In from "../../../components/Xbn/transaction/In";
+import Out from "../../../components/Xbn/transaction/Out";
 
-import { getWalletBalance } from "../../../app/balanceSlice";
+import { getWalletBalance } from "../../../app/xbn/xbnbalanceSlice";
 
 import { useRouter } from "next/router";
 
