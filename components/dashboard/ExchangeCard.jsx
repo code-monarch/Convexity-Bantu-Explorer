@@ -3,8 +3,8 @@ import Link from "next/link"
 import Image from "next/image"
 
 const style = {
-  wrapper: `w-[800px] flex flex-wrap justify-center space-x-4 mb-[20px]`,
-  container: `w-[250px] relative p-5 max-w-sm rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 mb-[20px] cursor-pointer hover:-translate-y-1 hover:scale-105 transition ease-in-out delay-150`,
+  wrapper: `w-[80vw] flex flex-wrap justify-center space-x-4 mb-[20px]`,
+  container: `w-[250px] relative p-5 max-w-sm rounded shadow-md mb-[20px] cursor-pointer hover:-translate-y-1 hover:scale-105 transition ease-in-out delay-150`,
   nameOfExchange: `mb-2 text-xl font-bold tracking-tight`,
   text: `text-sm mb-3 font-sm text-gray-700 dark:text-gray-400`,
 };
@@ -79,7 +79,7 @@ const ExchangeCard = () => {
         <div className={`${style.container} bg-[#7DFDFE]`}>
           <Link href='/tron'>
             <a>
-              <h5 className={`${style.nameOfExchange} text-black`}>TRON</h5>
+              <h5 className={`${style.nameOfExchange} text-black`}>USDT</h5>
               <p className={`${style.text} text-black`}>
                 Here are the biggest enterprise technology acquisitions of 2021
                 so far, in reverse chronological order.

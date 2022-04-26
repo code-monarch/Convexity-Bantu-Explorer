@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import millify from "millify";
 import { LoaderIcon } from "react-hot-toast";
 
 const headerstyle = {
@@ -37,13 +36,13 @@ const Header = ({ paymentOut }) => {
   );
 };
 
-const Out = ({ paymentOut}) => {
+const Out = ({ paymentOut }) => {
   // let [transactIn, setTransactIn] = useState()
 
   const transactOut = useSelector((state) => state?.paymentsOut);
 
   return (
-    <div className='w-[48%] flex flex-col items-center text-black rounded bg-[#ecf0f1]'>
+    <div className='w-[48%] overflow-auto flex flex-col items-center text-black rounded bg-[#ecf0f1]'>
       <Header paymentOut={paymentOut} />
       <div className='w-full'>
         {paymentOut?.map((outs, i) => {
@@ -55,7 +54,7 @@ const Out = ({ paymentOut}) => {
               <div className='flex flex-row items-center'>
                 <span className='mr-3 font-bold'>Hash:</span>
                 <span className='truncate font-medium text-xs'>
-                  {outs?.transaction_hash}
+                  {outs?.hash}
                 </span>
               </div>
               {/* TWO */}
@@ -66,14 +65,14 @@ const Out = ({ paymentOut}) => {
               <div className='flex flex-row items-center'>
                 <span className='mr-3 font-bold'>Amount:</span>
                 <span className='truncate font-medium text-xs'>
-                  {outs?.amount}
+                  {outs?.value}
                 </span>
               </div>
               {/* FIVE */}
               <div>
                 <span className='mr-3 font-bold'>Time:</span>
                 <span className='truncate font-medium text-xs'>
-                  {outs?.created_at}
+                  {outs?.timeStamp}
                 </span>
               </div>
             </div>

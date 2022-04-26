@@ -1,9 +1,9 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import SideBar from "./sidebar/SideBar";
-import Dashboard from "./dashboard/index";
+import Dashboard from "./dashboard";
 import AddWalletForm from "./form/AddWalletForm";
 
-export default function HomePageLayout() {
+export default function Layout() {
   // State for Add Wallet Modal
   const [openModal, setOpenModal] = useState(false);
   // State for Add Wallet Button
@@ -14,10 +14,12 @@ export default function HomePageLayout() {
     setOpenModal(!openModal);
   };
   return (
-    <div className='flex flex-row justify-between relative w-[100vw] h-[100vh] '>
-      <SideBar toggleModal={toggleModal} />
-      <Dashboard />
-      {/* <AddWalletForm openModal={openModal} toggleModal={toggleModal} /> */}
+    <div className='relative w-[100vw] h-[100vh]'>
+      <div className='flex justify-between w-[100%]'>
+        <SideBar toggleModal={toggleModal} />
+        <Dashboard />
+      </div>
+      <AddWalletForm openModal={openModal} toggleModal={toggleModal} />
     </div>
   );
 }

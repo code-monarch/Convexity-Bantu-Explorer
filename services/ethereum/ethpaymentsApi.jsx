@@ -8,9 +8,9 @@ export const ethpaymentsApi = createApi({
   endpoints: (builder) => ({
     getPayments: builder.query({
       query: (walletKey) =>
-        `   ?module=account&action=txlist&address=${walletKey}&startblock=0&endblock=99999999&page=1&offset=10&sort=asc&apikey=${process.env.ETHERSCAN_KEY}`,
+        `?module=account&action=txlist&address=${walletKey}&startblock=0&endblock=99999999&page=1&offset=10&sort=asc&apikey=${process.env.ETHERSCAN_KEY}`,
     }),
   }),
 });
 
-export const { useGetEthPaymentsQuery } = ethpaymentsApi;
+export const { useGetPaymentsQuery } = ethpaymentsApi;

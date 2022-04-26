@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import SideBar from "./sidebar/SideBar";
 import Dashboard from "./dashboard";
-import AddWalletForm from "../../form/AddWalletForm";
+import AddWalletForm from "./form/AddWalletForm";
 
 export default function Layout() {
   // State for Add Wallet Modal

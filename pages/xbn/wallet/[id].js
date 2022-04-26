@@ -1,18 +1,18 @@
 import Header from "../../../components/dashboard/Header";
-import In from "../../../components/transaction/In";
-import Out from "../../../components/transaction/Out";
+import TransactionsPageLayout from "../../../components/Xbn/TransactionsPageLayout";
+import In from "../../../components/xbn/transaction/In";
+import Out from "../../../components/xbn/transaction/Out";
 
 import { getWalletBalance } from "../../../app/balanceSlice";
 
 import { useRouter } from "next/router";
 
-import { useGetPaymentsQuery } from "../../../services/paymentsApi";
-import { useGetBalanceQuery } from "../../../services/balanceApi";
+import { useGetPaymentsQuery } from "../../../services/xbn/xbnpaymentsApi";
+import { useGetBalanceQuery } from "../../../services/xbn/xbnbalanceApi";
 import { useDispatch } from "react-redux";
 
 const style = {
-  container: `w-[80vw] bg-[#fff] ml-[20vw]`,
-  main: `bg-white w-[100%] h-full overflow-auto flex flex-row justify-around rounded mt-[80px]`,
+  main: `bg-white w-[80vw] h-[100%] flex flex-row justify-around rounded mt-[80px]`,
 };
 
 const Wallet = () => {
@@ -54,13 +54,17 @@ const Wallet = () => {
   );
 
   return (
-    <div className={style.container}>
-      <Header />
-      <main className={style.main}>
-        <In paymentIn={paymentIn} />
-        <Out paymentOut={paymentOut} />
-      </main>
-    </div>
+    <TransactionsPageLayout>
+      <div>
+        <Header />
+        <div className='flex flex-row justify-between'>
+          <main className={style.main}>
+            <In paymentIn={paymentIn} />
+            <Out paymentOut={paymentOut} />
+          </main>
+        </div>
+      </div>
+    </TransactionsPageLayout>
   );
 };
 

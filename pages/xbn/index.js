@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Layout from "../../components/exchangeCoins/Xbn/index"
+import Layout from "../../components/Xbn/index"
 
 export default function Home() {
   return (

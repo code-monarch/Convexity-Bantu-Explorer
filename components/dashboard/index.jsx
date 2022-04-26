@@ -6,7 +6,7 @@ import { Toaster } from "react-hot-toast";
 
 const DashBoard = () => {
   return (
-    <div className='relative w-[80vw] flex flex-col items-center justify-between'>
+    <div className='ml-[20vw] relative flex flex-col items-center justify-between'>
       <Header />
       <ExchangeCard />
       <Toaster />

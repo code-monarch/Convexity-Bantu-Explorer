@@ -12,4 +12,4 @@ export const ethbalanceApi = createApi({
   }),
 });
 
-export const { useGetEthBalanceQuery } = ethbalanceApi;
+export const { useGetBalanceQuery } = ethbalanceApi;

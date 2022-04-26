@@ -1,4 +1,4 @@
-import { deleteWallet } from "../../../../app/walletSlice";
+import { deleteEthWallet } from "../../../app/ethereum/ethwalletSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 import { useRouter } from "next/router";
@@ -12,8 +12,8 @@ import { LoaderIcon } from "react-hot-toast";
 import toast from "react-hot-toast";
 
 const style = {
-  walletContainer: `cursor-pointer font-bold font-sans h-[60px] w-[90%] bg-[#f9690c] opacity-25 text-[#fff] cursor-pointer rounded-sm p-3 hover:shadow-md mx-auto mt-[10px] cursor-pointer hover:-translate-y-1 hover:scale-105 transition ease-in-out delay-150`,
-  walletname: `font-bold cursor-pointer text-[#fff] uppercase`,
+  walletContainer: `cursor-pointer font-bold font-sans h-[60px] bg-[#ecf0f1] w-[90%] text-[#000] cursor-pointer rounded-sm p-3 hover:shadow-md mx-auto mt-[10px] cursor-pointer hover:-translate-y-1 hover:scale-105 transition ease-in-out delay-150`,
+  walletname: `font-bold cursor-pointer uppercase`,
 };
 
 const WalletItem = ({ id, walletKey, walletName }) => {
@@ -38,16 +38,16 @@ const WalletItem = ({ id, walletKey, walletName }) => {
 
   const handleDeleteClick = () => {
     dispatch(
-      deleteWallet({
+      deleteEthWallet({
         id: id,
       })
-    );
+      );
+      console.log("eth wallet deleted")
     notify();
   };
-
   return (
     <div className={style.walletContainer}>
-      <div className='flex flex-col justify-between cursor-pointer ring-pink-500 focus:ring-2'>
+      <div className='flex flex-col justify-between cursor-pointer bg-[#ecf0f1] focus:ring-2'>
         <div className='flex flex-row justify-between items-top'>
           <Link href={`${router.pathname}/wallet/${walletKey}`}>
             <a className='cursor-pointer'>

@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-export const paymentsApi = createApi({
-  reducerPath: 'paymentsApi',
+export const xbnpaymentsApi = createApi({
+  reducerPath: 'xbnpaymentsApi',
   baseQuery: fetchBaseQuery({
     baseUrl: "https://expansion-testnet.bantu.network",
   }),
@@ -12,4 +12,4 @@ export const paymentsApi = createApi({
   }), 
 });
 
-export const { useGetPaymentsQuery } = paymentsApi;
+export const { useGetPaymentsQuery } = xbnpaymentsApi;

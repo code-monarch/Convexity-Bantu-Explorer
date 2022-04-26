@@ -1,21 +1,14 @@
 import Head from "next/head";
-import Header from "../../components/dashboard/Header";
-import SideBar from "../../components/sidebar/SideBar";
-
-const style = {
-  container: `relative h-[100vh] w-[100vw] flex flex-col`,
-};
+import Layout from "../../components/Ethereum/index";
 
 export default function Home() {
   return (
-    <div className={style.container}>
+    <Layout>
       <Head>
-        <title>Ethereum </title>
+        <title>ETHEREUM</title>
         <meta name='description' content='XBN Explorer' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <SideBar />
-      <Header />
-    </div>
+    </Layout>
   );
 }

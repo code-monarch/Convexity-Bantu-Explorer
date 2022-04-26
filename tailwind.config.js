@@ -9,8 +9,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Heebo", ...defaultTheme.fontFamily.sans],
-        serif: ["Merriweather", "serif"],
+        sans: ["Roboto", ...defaultTheme.fontFamily.sans],
+        serif: ["Heebo", "serif"],
       },
       colors: {
         customgreen: "#fff",

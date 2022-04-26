@@ -1,4 +1,4 @@
-import { deleteWallet } from "../../app/walletSlice";
+import { deleteWallet } from "../../../app/xbn/xbnwalletSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 import { useRouter } from "next/router";
@@ -12,8 +12,8 @@ import { LoaderIcon } from "react-hot-toast";
 import toast from "react-hot-toast";
 
 const style = {
-  walletContainer: `cursor-pointer font-bold font-sans h-[60px] w-[90%] bg-walletColor focus:bg-white focus:text-black text-[#fff] cursor-pointer rounded-sm p-3 hover:shadow-md mx-auto mt-[10px] cursor-pointer hover:-translate-y-1 hover:scale-105 transition ease-in-out delay-150`,
-  walletname: `font-bold cursor-pointer text-[#fff] uppercase`,
+  walletContainer: `cursor-pointer font-bold font-sans h-[60px] w-[90%] bg-white text-[#ff690c] cursor-pointer rounded-sm p-3 hover:shadow-md mx-auto mt-[10px] cursor-pointer hover:-translate-y-1 hover:scale-105 transition ease-in-out delay-150`,
+  walletname: `font-bold cursor-pointer uppercase`,
 };
 
 const WalletItem = ({ id, walletKey, walletName }) => {
@@ -31,7 +31,7 @@ const WalletItem = ({ id, walletKey, walletName }) => {
   const router = useRouter();
 
   // GET WALLET BALANCE FROM BALANCE STATE STATE IN BALANCE SLICE
-  const balance = useSelector((state) => state.xbnbalance);
+  const balance = useSelector((state) => state.balance);
   console.log(balance);
 
   const dispatch = useDispatch();
@@ -47,10 +47,9 @@ const WalletItem = ({ id, walletKey, walletName }) => {
 
   return (
     <div className={style.walletContainer}>
-      <div className='flex flex-col justify-between cursor-pointer ring-pink-500 focus:ring-2'>
+      <div className='flex flex-col justify-between cursor-pointer bg-white focus:ring-2'>
         <div className='flex flex-row justify-between items-top'>
-          <Link
-            href={`${router.pathname}/wallet/${walletKey}`}>
+          <Link href={`${router.pathname}/wallet/${walletKey}`}>
             <a className='cursor-pointer'>
               <h3 className={style.walletname}>{walletName}</h3>
             </a>

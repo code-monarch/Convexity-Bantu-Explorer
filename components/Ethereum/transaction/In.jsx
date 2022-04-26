@@ -40,7 +40,7 @@ const Header = ({ paymentIn }) => {
 
 const In = ({ paymentIn }) => {
   return (
-    <div className='w-[48%] flex flex-col items-center text-[#252422] rounded bg-[#ecf0f1]'>
+    <div className='w-[48%] h-[100%] overflow-auto flex flex-col items-center text-[#252422] rounded bg-[#ecf0f1]'>
       <Header paymentIn={paymentIn} />
       <div className='w-full'>
         {paymentIn?.map((ins, i) => {
@@ -52,7 +52,7 @@ const In = ({ paymentIn }) => {
               <div className='flex flex-row items-center'>
                 <span className='mr-3 font-bold'>Hash:</span>
                 <span className='truncate font-medium text-xs'>
-                  {ins?.transaction_hash}
+                  {ins?.hash}
                 </span>
               </div>
               {/* TWO */}
@@ -61,16 +61,16 @@ const In = ({ paymentIn }) => {
                 <span className='truncate font-medium text-xs'>{ins?.to}</span>
               </div>
               <div className='flex flex-row items-center'>
-                <span className='mr-3 font-bold'>Amount:</span>
+                <span className='mr-3 font-bold'>Value:</span>
                 <span className='truncate font-medium text-xs'>
-                  {ins?.amount}
+                  {ins?.value}
                 </span>
               </div>
               {/* FIVE */}
               <div className='flex flex-row items-center'>
                 <span className='mr-3 font-bold'>Time:</span>
                 <span className='truncate font-medium text-xs'>
-                  {ins?.created_at}
+                  {ins?.timeStamp}
                 </span>
               </div>
             </div>
