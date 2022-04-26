@@ -1,6 +1,6 @@
 import React from "react";
 import WalletSvg from "./icons";
-import WalletItem from "./WalletItem";
+import WalletItem from "./walletItem";
 import { useSelector } from "react-redux";
 import AddWalletBtn from "../form/AddWalletBtn";
 

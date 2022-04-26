@@ -3,12 +3,12 @@ import TransactionsPageLayout from "../../../components/USDT/TransactionsPageLay
 import In from "../../../components/USDT/transaction/In";
 import Out from "../../../components/USDT/transaction/Out";
 
-import { getWalletBalance } from "../../../app/USDT/balanceSlice";
+import { getWalletBalance } from "../../../app/usdt/balanceSlice";
 
 import { useRouter } from "next/router";
 
-import { useGetPaymentsQuery } from "../../../services/USDT/usdtpaymentsApi";
-import { useGetBalanceQuery } from "../../../services/USDT/usdtbalanceApi";
+import { useGetPaymentsQuery } from "../../../services/usdt/usdtpaymentsApi";
+import { useGetBalanceQuery } from "../../../services/usdt/usdtbalanceApi";
 import { useDispatch } from "react-redux";
 
 const style = {
